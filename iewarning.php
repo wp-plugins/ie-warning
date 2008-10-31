@@ -53,8 +53,6 @@ function header_files() {
 			//-->
 			</style>
 		<?php
-	} else {
-		echo $_SERVER['HTTP_USER_AGENT']."@@@@@@@@";
 	}
 }
 
