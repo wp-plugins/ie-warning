@@ -3,7 +3,7 @@
 Plugin Name: IE warning
 Plugin URI: http://bobrik.name/
 Description: Adds a splash warning to every blog page, if reader using Internet Explorer.
-Version: 0.17
+Version: 0.18
 Author: Ivan Babrou <ibobrik@gmail.com>
 Author URI: http://bobrik.name/
 
@@ -73,10 +73,14 @@ function set_cookies () {
 function need_work () {
 	if (preg_match('/MSIE (\d.\d+);/', $_SERVER['HTTP_USER_AGENT'], $version)) {
 		if (get_option('iewarning_min_version') == 'inf' || get_option('iewarning_min_version') > $version[1]) {
-			if (isset($_COOKIE['iewarning_show_times']) && $_COOKIE['iewarning_show_times'] > 0) {
-				return true;
+			if (isset($_COOKIE['iewarning_show_times'])) {
+				if ($_COOKIE['iewarning_show_times'] > 0) {
+					return true;
+				} else {
+					return false;
+				}
 			} else {
-				return false;
+				return true;
 			}
 		} else {
 			return false;

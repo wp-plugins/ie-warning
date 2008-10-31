@@ -3,7 +3,7 @@ Contributors: bobrik
 Tags: ie, block, internet explorer, javascript
 Requires at least: 2.0.2
 Tested up to: 2.6
-Stable tag: 0.17
+Stable tag: 0.18
 
 Shows nice and simple splash to your visitors with Internet Explorer, supports trivial settings
 
