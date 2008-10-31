@@ -3,11 +3,11 @@
 Plugin Name: IE warning
 Plugin URI: http://bobrik.name/
 Description: Adds a splash warning to every blog page, if reader using Internet Explorer.
-Version: 0.18
+Version: 0.17
 Author: Ivan Babrou <ibobrik@gmail.com>
 Author URI: http://bobrik.name/
 
-Copyright (C) 2007 Ivan Babroŭ <ibobrik@gmail.com> http://bobrik.name
+Copyright 2008 Ivan Babroŭ (email : ibobrik@gmail.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ function header_files() {
 			function iewarning() {
 				var d=document.createElement("div");
 				d.id="ie-warning";
-				d.innerHTML="<div><h1>Stop using IE!</h1><br/><p>Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.</p><p>You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.</p><p style=\"text-align: center\"><a href=\"javascript:iewarningclose()\">Close</a></p></div>";
+				d.innerHTML="<div><h1>"._e("Stop using IE!")."</h1><br/><p>"._e("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.")."</p><p>"._e("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.")."</p><p style=\"text-align: center\"><a href=\"javascript:iewarningclose()\">"._e("Close")."</a></p></div>";
 				document.body.appendChild(d);
 				document.getElementsByTagName("body").className="opacity70";
 			}
