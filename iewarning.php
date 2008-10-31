@@ -3,7 +3,7 @@
 Plugin Name: IE warning
 Plugin URI: http://bobrik.name/
 Description: Adds a splash warning to every blog page, if reader using Internet Explorer.
-Version: 0.12
+Version: 0.17
 Author: Ivan Babrou <ibobrik@gmail.com>
 Author URI: http://bobrik.name/
 
@@ -26,7 +26,7 @@ Boston, MA 02111-1307, USA.
 */
 
 function header_files() {
-	if (eregi("msie", $_SERVER['HTTP_USER_AGENT'])) {
+	if (need_work()) {
 		?><script type='text/javascript'>
 			//<![CDATA[
 			function iewarning() {
@@ -49,15 +49,55 @@ function header_files() {
 			#ie-warning{position: absolute;top:200px;left:0;width:100%}
 			#ie-warning div{width: 320px;margin:auto;background:#eeeeec;border:1px solid #3465a4;padding: 1em;text-align:center}
 			#ie-warning div a{color:#3465a4}
+			#ie-warning div h1 {color:#3465a4}
 			.opacity70{opacity:0.7}
 			//-->
 			</style>
 		<?php
-	} else {
-		echo $_SERVER['HTTP_USER_AGENT']."@@@@@@@@";
 	}
 }
 
+function set_cookies () {
+// 	setcookie('iewarning_show_times', 2);
+	if (get_option('iewarning_show_times') != 'inf' && get_option('iewarning_show_times') > 0) {
+		if(isset($_COOKIE['iewarning_show_times'])) {
+			if ($_COOKIE['iewarning_show_times'] > 0) {
+				setcookie('iewarning_show_times', $_COOKIE['iewarning_show_times'] - 1);
+			}
+		} else {
+			setcookie('iewarning_show_times', get_option('iewarning_show_times'));
+		}
+	}
+}
+
+function need_work () {
+	if (preg_match('/MSIE (\d.\d+);/', $_SERVER['HTTP_USER_AGENT'], $version)) {
+		if (get_option('iewarning_min_version') == 'inf' || get_option('iewarning_min_version') > $version[1]) {
+			if (isset($_COOKIE['iewarning_show_times']) && $_COOKIE['iewarning_show_times'] > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	} else {
+		return false;
+	}
+}
+
+function options_page() {
+	add_options_page('IE Warning', 'IE Warning', 10, 'ie-warning/options.php');
+}
+
+
+add_action('init', 'set_cookies');
 add_action('wp_head', 'header_files');
+add_action('admin_menu', 'options_page');
+
+add_option('iewarning_show_times', 'inf');
+add_option('iewarning_min_version', 9.9);
+add_option('iewarning_alert_pause', 2000);
+
 
 ?>
