@@ -5,6 +5,8 @@ if ('process' == $_POST['stage']) {
 	update_option('iewarning_show_times', $_POST['iewarning_show_times']);
 	update_option('iewarning_min_version', $_POST['iewarning_min_version']);
 	update_option('iewarning_alert_pause', $_POST['iewarning_alert_pause']);
+	update_option('iewarning_alert_message_title', $_POST['iewarning_alert_message_title']);
+	update_option('iewarning_alert_message', $_POST['iewarning_alert_message']);
 }
 
 ?>
@@ -33,6 +35,20 @@ if ('process' == $_POST['stage']) {
 			<td>
 				<input type="text" name="iewarning_alert_pause" value="<?php echo get_option('iewarning_alert_pause'); ?>" />
 				<p><small><?php _e("Default is 2000 (2 seconds)"); ?></small></p>
+			</td>
+		</tr>
+		<tr valign="baseline">
+			<th scope="row"><?php _e("Custom message title"); ?></th>
+			<td>
+				<input type="text" name="iewarning_alert_message_title" value="<?php echo get_option('iewarning_alert_message_title'); ?>" />
+				<p><small><?php _e("Leave empty for default value"); ?></small></p>
+			</td>
+		</tr>
+		<tr valign="baseline">
+			<th scope="row"><?php _e("Custom message"); ?></th>
+			<td>
+				<textarea name="iewarning_alert_message" rows="10" cols="50"><?php echo get_option('iewarning_alert_message'); ?></textarea>
+				<p><small><?php _e("Leave empty for default value"); ?></small></p>
 			</td>
 		</tr>
 	</table>

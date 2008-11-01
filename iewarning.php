@@ -94,6 +94,7 @@ function options_page() {
 	add_options_page('IE Warning', 'IE Warning', 10, 'ie-warning/options.php');
 }
 
+load_plugin_textdomain('ie-warning');
 
 add_action('init', 'set_cookies');
 add_action('wp_head', 'header_files');
@@ -102,6 +103,8 @@ add_action('admin_menu', 'options_page');
 add_option('iewarning_show_times', 'inf');
 add_option('iewarning_min_version', 9.9);
 add_option('iewarning_alert_pause', 2000);
+add_option('iewarning_alert_message_title', '');
+add_action('iewarning_alert_message', '');
 
 
 ?>
