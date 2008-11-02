@@ -21,6 +21,12 @@ msgstr ""
 
 #: iewarning.php:39
 msgid ""
+"Please, stop using Internet Exporer as browser at all. It's slow, unsecure "
+"and doesn't render web pages correctly."
+msgstr ""
+
+#: iewarning.php:39
+msgid ""
 "You may download free and <strong>better</strong> browser like <a "
 "href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://"
 "opera.com/'>Opera</a>."
