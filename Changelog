@@ -1,0 +1,13 @@
+Changelog
+
+0.18
+ Added translations (russian & belarusian)
+ Added options for custom message
+ Changed description
+ Fixed css
+ Some minor fixes
+
+
+0.17
+ Fixed missing cookies checking
+ Added Changelog file
