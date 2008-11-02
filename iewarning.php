@@ -36,7 +36,7 @@ function header_files() {
 			function iewarning() {
 				var d=document.createElement("div");
 				d.id="ie-warning";
-				d.innerHTML="<div><h1>"<?php._e("Stop using IE!", $textdomain); ?>"</h1><br/><p>"<?php_e("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.", $textdomain); ?>"</p><p>"<?php _e("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.", $textdomain); ?>"</p><p style=\"text-align: center\"><a href=\"javascript:iewarningclose()\">"<?php _e("Close", $textdomain); ?>"</a></p></div>";
+				d.innerHTML="<div><h1>"<?php._e("Stop using IE!", $textdomain); ?>"</h1><br/><p>"<?php _e("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.", $textdomain); ?>"</p><p>"<?php _e("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.", $textdomain); ?>"</p><p style=\"text-align: center\"><a href=\"javascript:iewarningclose()\">"<?php _e("Close", $textdomain); ?>"</a></p></div>";
 				document.body.appendChild(d);
 				document.getElementsByTagName("body").className="opacity70";
 			}
