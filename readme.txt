@@ -11,10 +11,6 @@ Shows nice and simple splash to your visitors with Internet Explorer, supports t
 
 This plugins shows blog visitors with Internet Explorer (ie) splash window, where gives links to
 Opera and Mozilla Firefox pages. It says that ie is unsecure, old, and just bad browser.
-Options:
-1. How much times to show alert
-2. Minimum acceptable IE version to hide alert
-3. Pause before showing alert
 
 == Installation ==
 

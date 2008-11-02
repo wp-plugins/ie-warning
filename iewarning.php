@@ -25,6 +25,10 @@ the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 Boston, MA 02111-1307, USA.
 */
 
+$textdomain = 'iewarning';
+load_plugin_textdomain($textdomain, false, 'ie-warning');
+
+
 function header_files() {
 	if (need_work()) {
 		?><script type='text/javascript'>
@@ -32,7 +36,7 @@ function header_files() {
 			function iewarning() {
 				var d=document.createElement("div");
 				d.id="ie-warning";
-				d.innerHTML="<div><h1>"._e("Stop using IE!")."</h1><br/><p>"._e("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.")."</p><p>"._e("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.")."</p><p style=\"text-align: center\"><a href=\"javascript:iewarningclose()\">"._e("Close")."</a></p></div>";
+				d.innerHTML="<div><h1>"<?php._e("Stop using IE!", $textdomain); ?>"</h1><br/><p>"<?php_e("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.", $textdomain); ?>"</p><p>"<?php _e("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.", $textdomain); ?>"</p><p style=\"text-align: center\"><a href=\"javascript:iewarningclose()\">"<?php _e("Close", $textdomain); ?>"</a></p></div>";
 				document.body.appendChild(d);
 				document.getElementsByTagName("body").className="opacity70";
 			}
@@ -93,8 +97,6 @@ function need_work () {
 function options_page() {
 	add_options_page('IE Warning', 'IE Warning', 10, 'ie-warning/options.php');
 }
-
-load_plugin_textdomain('ie-warning');
 
 add_action('init', 'set_cookies');
 add_action('wp_head', 'header_files');

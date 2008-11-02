@@ -17,43 +17,43 @@ if ('process' == $_POST['stage']) {
 	<input type="hidden" name="stage" value="process" />
 	<table width="100%" cellspacing="2" cellpadding="5" class="form-table">
 		<tr valign="baseline">
-			<th scope="row"><?php _e("How much times we neet to show alert window"); ?></th>
+			<th scope="row"><?php _e("How much times we neet to show alert window", $textdomain); ?></th>
 			<td>
-				<input type="text" name="iewarning_show_times" value="<?php echo get_option('iewarning_show_times'); ?>" />
-				<p><small><?php _e("Try 'inf', if want to show on every page"); ?></small></p>
+				<input type="text" name="iewarning_show_times" value="<?php echo get_option('iewarning_show_times', $textdomain); ?>" />
+				<p><small><?php _e("Try 'inf', if want to show on every page", $textdomain); ?></small></p>
 			</td>
 		</tr>
 		<tr valign="baseline">
-			<th scope="row"><?php _e("Minimum acceptable IE version"); ?></th>
+			<th scope="row"><?php _e("Minimum acceptable IE version", $textdomain);  ?></th>
 			<td>
-				<input type="text" name="iewarning_min_version" value="<?php echo get_option('iewarning_min_version'); ?>" />
-				<p><small><?php _e("Set to <strong>x.y</strong> show warning in every IE version less than <strong>x.y</strong>"); ?></small></p>
+				<input type="text" name="iewarning_min_version" value="<?php echo get_option('iewarning_min_version', $textdomain); ?>" />
+				<p><small><?php _e("Set to <strong>x.y</strong> show warning in every IE version less than <strong>x.y</strong>", $textdomain); ?></small></p>
 			</td>
 		</tr>
 		<tr valign="baseline">
-			<th scope="row"><?php _e("Sleep before dispay alert (in milliseconds)"); ?></th>
+			<th scope="row"><?php _e("Sleep before dispay alert (in milliseconds)", $textdomain); ?></th>
 			<td>
 				<input type="text" name="iewarning_alert_pause" value="<?php echo get_option('iewarning_alert_pause'); ?>" />
-				<p><small><?php _e("Default is 2000 (2 seconds)"); ?></small></p>
+				<p><small><?php _e("Default is 2000 (2 seconds)", $textdomain); ?></small></p>
 			</td>
 		</tr>
 		<tr valign="baseline">
-			<th scope="row"><?php _e("Custom message title"); ?></th>
+			<th scope="row"><?php _e("Custom message title", $textdomain); ?></th>
 			<td>
 				<input type="text" name="iewarning_alert_message_title" value="<?php echo get_option('iewarning_alert_message_title'); ?>" />
-				<p><small><?php _e("Leave empty for default value"); ?></small></p>
+				<p><small><?php _e("Leave empty for default value", $textdomain); ?></small></p>
 			</td>
 		</tr>
 		<tr valign="baseline">
-			<th scope="row"><?php _e("Custom message"); ?></th>
+			<th scope="row"><?php _e("Custom message", $textdomain); ?></th>
 			<td>
 				<textarea name="iewarning_alert_message" rows="10" cols="50"><?php echo get_option('iewarning_alert_message'); ?></textarea>
-				<p><small><?php _e("Leave empty for default value"); ?></small></p>
+				<p><small><?php _e("Leave empty for default value", $textdomain); ?></small></p>
 			</td>
 		</tr>
 	</table>
 	<p class="submit">
-		<input type="submit" name="Submit" value="<?php _e("Save Changes"); ?>" />
+		<input type="submit" name="Submit" value="<?php _e("Save Changes", $textdomain); ?>" />
 	</p>
 	</form>
 </div>
