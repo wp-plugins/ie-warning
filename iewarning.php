@@ -3,7 +3,7 @@
 Plugin Name: IE warning
 Plugin URI: http://bobrik.name/
 Description: Adds a splash warning to every blog page, if reader using Internet Explorer.
-Version: 0.17
+Version: 0.18
 Author: Ivan Babrou <ibobrik@gmail.com>
 Author URI: http://bobrik.name/
 
@@ -36,16 +36,14 @@ function header_files() {
 			function iewarning() {
 				var d=document.createElement("div");
 				d.id="ie-warning";
-				d.innerHTML="<div><h1>"<?php._e("Stop using IE!", $textdomain); ?>"</h1><br/><p>"<?php _e("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.", $textdomain); ?>"</p><p>"<?php _e("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.", $textdomain); ?>"</p><p style=\"text-align: center\"><a href=\"javascript:iewarningclose()\">"<?php _e("Close", $textdomain); ?>"</a></p></div>";
+				d.innerHTML="<div><h1><?php echo trim(get_option('iewarning_alert_message_title')) == '' ? __("Stop using IE!", $textdomain) : str_replace('"', '\"', get_option('iewarning_alert_message_title')); ?></h1><br/><p><?php echo trim(get_option('iewarning_alert_message')) == '' ? __("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.", $textdomain).__("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.", $textdomain) : str_replace('"', '\"', get_option('iewarning_alert_message')); ?></p><p style=\"text-align: center\"><a href=\"javascript:iewarningclose()\"><?php _e("Close", $textdomain); ?></a></p></div>";
 				document.body.appendChild(d);
-				document.getElementsByTagName("body").className="opacity70";
 			}
 			
 			function iewarningclose() {
 				document.body.removeChild(document.getElementById("ie-warning"));
-				document.getElementsByTagName("body").className="";
 			}
-			setTimeout('iewarning()',2000);
+			setTimeout('iewarning()', <?php echo get_option('iewarning_alert_pause'); ?>);
 			//]]>
 		</script>
 			<style type="text/css">
@@ -53,8 +51,7 @@ function header_files() {
 			#ie-warning{position: absolute;top:200px;left:0;width:100%}
 			#ie-warning div{width: 320px;margin:auto;background:#eeeeec;border:1px solid #3465a4;padding: 1em;text-align:center}
 			#ie-warning div a{color:#3465a4}
-			#ie-warning div h1 {color:#3465a4}
-			.opacity70{opacity:0.7}
+			#ie-warning div h1 {color:#3465a4; padding: 0.3em}
 			//-->
 			</style>
 		<?php
@@ -107,6 +104,5 @@ add_option('iewarning_min_version', 9.9);
 add_option('iewarning_alert_pause', 2000);
 add_option('iewarning_alert_message_title', '');
 add_action('iewarning_alert_message', '');
-
 
 ?>
