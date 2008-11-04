@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/ie-warning\n"
+"POT-Creation-Date: 2008-11-01 13:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: iewarning.php:39
+msgid "Stop using IE!"
+msgstr ""
+
+#: iewarning.php:39
+msgid ""
+"Please, stop using Internet Exporer as browser at all. It's slow, unsecure "
+"and doesn't render web pages correctly."
+msgstr ""
+
+#: iewarning.php:39
+msgid ""
+"You may download free and <strong>better</strong> browser like <a "
+"href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://"
+"opera.com/'>Opera</a>."
+msgstr ""
+
+#: iewarning.php:39
+msgid "Close"
+msgstr ""
+
+#: options.php:20
+msgid "How much times we neet to show alert window"
+msgstr ""
+
+#: options.php:23
+msgid "Try 'inf', if want to show on every page"
+msgstr ""
+
+#: options.php:27
+msgid "Minimum acceptable IE version"
+msgstr ""
+
+#: options.php:30
+msgid ""
+"Set to <strong>x.y</strong> show warning in every IE version less than "
+"<strong>x.y</strong>"
+msgstr ""
+
+#: options.php:34
+msgid "Sleep before dispay alert (in milliseconds)"
+msgstr ""
+
+#: options.php:37
+msgid "Default is 2000 (2 seconds)"
+msgstr ""
+
+#: options.php:41
+msgid "Custom message title"
+msgstr ""
+
+#: options.php:44 options.php:51
+msgid "Leave empty for default value"
+msgstr ""
+
+#: options.php:48
+msgid "Custom message"
+msgstr ""
+
+#: options.php:56
+msgid "Save Changes"
+msgstr ""

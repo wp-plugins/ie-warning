@@ -1,0 +1,21 @@
+Changelog
+
+0.19
+ Added CSS field to options page
+ Minor translation fixes
+ Now default css is 'top-line'
+ Changed description (tnanks to Arun Yerram)
+ Changelog plugin URL
+
+
+0.18
+ Added translations (russian & belarusian)
+ Added options for custom message
+ Changed description
+ Fixed css
+ Some minor fixes
+
+
+0.17
+ Fixed missing cookies checking
+ Added Changelog file
