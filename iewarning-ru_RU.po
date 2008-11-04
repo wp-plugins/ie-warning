@@ -24,7 +24,7 @@ msgstr "Перестаньте использовать IE!"
 msgid ""
 "Please, stop using Internet Exporer as browser at all. It's slow, unsecure "
 "and doesn't render web pages correctly."
-msgstr "Пожалуйста, перестаньте использовать Internet Explorer как браузер. Он медленный, небезопасный и отображает веб-страницы некорректно"
+msgstr "Пожалуйста, перестаньте использовать Internet Explorer как браузер. Он медленный, небезопасный и отображает веб-страницы некорректно."
 
 #: iewarning.php:39
 msgid ""

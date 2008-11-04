@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: IE warning
-Plugin URI: http://bobrik.name/
-Description: Adds a splash warning to every blog page, if reader using Internet Explorer.
-Version: 0.18
+Plugin URI: http://bobrik.name/code/wordpress/ie-warning/
+Description: Shows nice and simple warning to your visitors with Internet Explorer, supports customization and settings
+Version: 0.19
 Author: Ivan Babrou <ibobrik@gmail.com>
 Author URI: http://bobrik.name/
 
@@ -36,10 +36,9 @@ function header_files() {
 			function iewarning() {
 				var d=document.createElement("div");
 				d.id="ie-warning";
-				d.innerHTML="<div><h1><?php echo trim(get_option('iewarning_alert_message_title')) == '' ? __("Stop using IE!", $textdomain) : str_replace('"', '\"', get_option('iewarning_alert_message_title')); ?></h1><br/><p><?php echo trim(get_option('iewarning_alert_message')) == '' ? __("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.", $textdomain).__("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.", $textdomain) : str_replace('"', '\"', get_option('iewarning_alert_message')); ?></p><p style=\"text-align: center\"><a href=\"javascript:iewarningclose()\"><?php _e("Close", $textdomain); ?></a></p></div>";
+				d.innerHTML="<div><p class='ie-warning-title'><?php echo trim(get_option('iewarning_alert_message_title')) == '' ? __("Stop using IE!", 'iewarning') : str_replace('"', '\"', get_option('iewarning_alert_message_title')); ?></p> <p><?php echo trim(get_option('iewarning_alert_message')) == '' ? __("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.", 'iewarning').' '.__("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.", 'iewarning') : str_replace('"', '\"', get_option('iewarning_alert_message')); ?></p> <p class='ie-warning-close'><a href=\"javascript:iewarningclose()\"><?php _e("Close", 'iewarning'); ?></a></p></div>";
 				document.body.appendChild(d);
 			}
-			
 			function iewarningclose() {
 				document.body.removeChild(document.getElementById("ie-warning"));
 			}
@@ -48,10 +47,7 @@ function header_files() {
 		</script>
 			<style type="text/css">
 			<!--
-			#ie-warning{position: absolute;top:200px;left:0;width:100%}
-			#ie-warning div{width: 320px;margin:auto;background:#eeeeec;border:1px solid #3465a4;padding: 1em;text-align:center}
-			#ie-warning div a{color:#3465a4}
-			#ie-warning div h1 {color:#3465a4; padding: 0.3em}
+				<?php echo (trim(get_option('iewarning_alert_css')) != '' ? get_option('iewarning_alert_css') : get_css('top-line')); ?>
 			//-->
 			</style>
 		<?php
@@ -59,7 +55,6 @@ function header_files() {
 }
 
 function set_cookies () {
-// 	setcookie('iewarning_show_times', 2);
 	if (get_option('iewarning_show_times') != 'inf' && get_option('iewarning_show_times') > 0) {
 		if(isset($_COOKIE['iewarning_show_times'])) {
 			if ($_COOKIE['iewarning_show_times'] > 0) {
@@ -91,6 +86,28 @@ function need_work () {
 	}
 }
 
+function get_css($layout, $js = false) {
+	if ($layout == 'top-line') {
+		$value = "#ie-warning{position:absolute;width:100%;top:0px;text-align:center}
+			#ie-warning div{background:#fcaf3e;border-bottom:1px solid #204a87;background:url(".get_option('siteurl')."/wp-content/plugins/ie-warning/warning.png);padding:2px}
+			#ie-warning div a{color:#204a87;font-weight:bold}
+			#ie-warning div p {display:inline;}
+			#ie-warning div p.ie-warning-title {visibility:hidden;height:0px;display:block;margin:0px}
+			#ie-warning div p.ie-warning-close a {color:#cc0000}";
+	} else if ($layout == 'old-splash') {
+		$value = "#ie-warning{position:absolute;top:200px;width:100%;text-align:center}
+			#ie-warning div{width: 320px;margin:auto;background:#eee;border:1px solid #3465a4;padding: 1em;}
+			#ie-warning div a{color:#3465a4} #ie-warning #ie-warning-close {text-align:center}
+			#ie-warning div p.ie-warning-title {color:#3465a4; padding: 0.3em; font-size:150%;font-weight:bold}
+			#ie-warning div p.ie-warning-close a {color:#cc0000}";
+	}
+	if ($js) {
+		return  str_replace("\t", "",str_replace("\n", "\\n", str_replace('\'', '\\\'', $value)));
+	} else {
+		return $value;
+	}
+}
+
 function options_page() {
 	add_options_page('IE Warning', 'IE Warning', 10, 'ie-warning/options.php');
 }
@@ -104,5 +121,6 @@ add_option('iewarning_min_version', 9.9);
 add_option('iewarning_alert_pause', 2000);
 add_option('iewarning_alert_message_title', '');
 add_action('iewarning_alert_message', '');
+add_option('iewarning_alert_css', '');
 
 ?>

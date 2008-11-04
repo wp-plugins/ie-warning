@@ -7,6 +7,7 @@ if ('process' == $_POST['stage']) {
 	update_option('iewarning_alert_pause', $_POST['iewarning_alert_pause']);
 	update_option('iewarning_alert_message_title', $_POST['iewarning_alert_message_title']);
 	update_option('iewarning_alert_message', $_POST['iewarning_alert_message']);
+	update_option('iewarning_alert_css', $_POST['iewarning_alert_css']);
 }
 
 ?>
@@ -49,6 +50,13 @@ if ('process' == $_POST['stage']) {
 			<td>
 				<textarea name="iewarning_alert_message" rows="10" cols="50"><?php echo get_option('iewarning_alert_message'); ?></textarea>
 				<p><small><?php _e("Leave empty for default value", $textdomain); ?></small></p>
+			</td>
+		</tr>
+		<tr valign="baseline">
+			<th scope="row"><?php _e("Custom CSS", $textdomain); ?></th>
+			<td>
+				<textarea name="iewarning_alert_css" id="iewarning_alert_css" rows="10" cols="70"><?php echo get_option('iewarning_alert_css'); ?></textarea>
+				<p><small><?php _e("Leave empty for default value", $textdomain); ?>; <input type="button" value="Line at top (default)" onClick="javascript:document.getElementById('iewarning_alert_css').value = '<?php echo get_css('top-line', true) ?>'" /><input type="button" value="Old splash" onClick="javascript:document.getElementById('iewarning_alert_css').value = '<?php echo get_css('old-splash', true) ?>'" /></small></p>
 			</td>
 		</tr>
 	</table>
