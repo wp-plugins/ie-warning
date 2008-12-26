@@ -1,5 +1,9 @@
 Changelog
 
+0.20
+ Added french translation (thanks to k|torz)
+ Fixed ie javascript error for ie (probably)
+
 0.19
  Added CSS field to options page
  Minor translation fixes
