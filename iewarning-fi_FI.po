@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: IE Warning (suom.IE varoitus) 0.20\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/ie-warning\n"
+"POT-Creation-Date: 2008-11-01 13:58+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: C.Hellberg <webmaster@blogijuttu.net>\n"
+"Language-Team: C. Hellberg <webmaster@blogijuttu.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Finnish\n"
+"X-Poedit-Country: FINLAND\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: iewarning.php:39
+msgid "Stop using IE!"
+msgstr "Lopeta IE:n k&auml;ytt&ouml;!"
+
+#: iewarning.php:39
+msgid "Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly."
+msgstr "Ole hyv&auml; ja lopeta Internet Explorerin  k&auml;ytt&ouml; kokonaan.  Se on hidas, ep&auml;turvallinen ja se n&auml;ytt&auml;&auml;  verkkosivut v&auml;&auml;rin. "
+
+#: iewarning.php:39
+msgid "You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>."
+msgstr "Olet tervetullut saamaan parempia Internetkokemuksia lataamalla <strong>vakaamman ja paremman</strong>  <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a>-  tai <a href='http://opera.com/'>Opera</a>-internetselaimen. "
+
+#: iewarning.php:39
+msgid "Close"
+msgstr "Sulje"
+
+#: options.php:20
+msgid "How much times we neet to show alert window"
+msgstr "Mill&auml; kaikilla sivuilla haluat varoituksen n&auml;kyv&auml;n?"
+
+#: options.php:23
+msgid "Try 'inf', if want to show on every page"
+msgstr "Laita 'inf', niin varoitus n&auml;kyy kaikilla sivuilla."
+
+#: options.php:27
+msgid "Minimum acceptable IE version"
+msgstr "Minimi IEn versio"
+
+#: options.php:30
+msgid "Set to <strong>x.y</strong> show warning in every IE version less than <strong>x.y</strong>"
+msgstr "Laita <strong>x.y</strong>, niin varoitus n&auml;kyy kaikissa IEn versioissa. "
+
+#: options.php:34
+msgid "Sleep before dispay alert (in milliseconds)"
+msgstr "Odottaa ennnen n&auml;kymist&auml; (ilmoitettava miljoonina. 1 miljoona vastaa 1 sekunttia)"
+
+#: options.php:37
+msgid "Default is 2000 (2 seconds)"
+msgstr "Oletus on 2000 (2 sekunttia)"
+
+#: options.php:41
+msgid "Custom message title"
+msgstr "Muokkautettu otsikko"
+
+#: options.php:44
+#: options.php:51
+msgid "Leave empty for default value"
+msgstr "J&auml;t&auml; tyhj&auml;ksi, jos haluat k&auml;ytt&auml;&auml; oletusasetuksia."
+
+#: options.php:48
+msgid "Custom message"
+msgstr "Muokkautettu varoitus"
+
+#: options.php:56
+msgid "Save Changes"
+msgstr "Tallenna asetukset"
+
