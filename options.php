@@ -1,4 +1,6 @@
 <?php
+// FIXME: delete stupid get_option second option
+
 $location = $options_page;
 
 if ('process' == $_POST['stage']) {
