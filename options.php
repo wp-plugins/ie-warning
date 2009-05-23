@@ -7,9 +7,9 @@ if ('process' == $_POST['stage']) {
 	update_option('iewarning_show_times', $_POST['iewarning_show_times']);
 	update_option('iewarning_min_version', $_POST['iewarning_min_version']);
 	update_option('iewarning_alert_pause', $_POST['iewarning_alert_pause']);
-	update_option('iewarning_alert_message_title', $_POST['iewarning_alert_message_title']);
-	update_option('iewarning_alert_message', $_POST['iewarning_alert_message']);
-	update_option('iewarning_alert_css', $_POST['iewarning_alert_css']);
+	update_option('iewarning_alert_message_title', stripslashes($_POST['iewarning_alert_message_title']));
+	update_option('iewarning_alert_message', str_replace(array("\r\n", "\n"), "<br/>", stripslashes($_POST['iewarning_alert_message'])));
+	update_option('iewarning_alert_css', stripslashes($_POST['iewarning_alert_css']));
 }
 
 ?>

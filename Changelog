@@ -1,7 +1,8 @@
 Changelog
 
 0.21
- Addded finnish translation (thanks to C.Hellberg)
+ Added finnish translation (thanks to C.Hellberg)
+ Fixed bugs with message and css characters escaping
 
 0.20
  Added french translation (thanks to k|torz)

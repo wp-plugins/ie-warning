@@ -3,7 +3,7 @@
 Plugin Name: IE warning
 Plugin URI: http://bobrik.name/code/wordpress/ie-warning/
 Description: Shows nice and simple warning to your visitors with Internet Explorer, supports customization and settings
-Version: 0.20
+Version: 0.21
 Author: Ivan Babrou <ibobrik@gmail.com>
 Author URI: http://bobrik.name/
 
@@ -36,7 +36,7 @@ function header_files() {
 			function iewarning() {
 				var d=document.createElement("div");
 				d.id="ie-warning";
-				d.innerHTML="<div><p class='ie-warning-title'><?php echo trim(get_option('iewarning_alert_message_title')) == '' ? __("Stop using IE!", 'iewarning') : str_replace('"', '\"', get_option('iewarning_alert_message_title')); ?></p> <p><?php echo trim(get_option('iewarning_alert_message')) == '' ? __("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.", 'iewarning').' '.__("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.", 'iewarning') : str_replace('"', '\"', get_option('iewarning_alert_message')); ?></p> <p class='ie-warning-close'><a href=\"javascript:iewarningclose()\"><?php _e("Close", 'iewarning'); ?></a></p></div>";
+				d.innerHTML="<div><p class='ie-warning-title'><?php echo trim(get_option('iewarning_alert_message_title')) == '' ? __("Stop using IE!", 'iewarning') : get_option('iewarning_alert_message_title'); ?></p> <p><?php echo trim(get_option('iewarning_alert_message')) == '' ? __("Please, stop using Internet Exporer as browser at all. It's slow, unsecure and doesn't render web pages correctly.", 'iewarning').' '.__("You may download free and <strong>better</strong> browser like <a href='http://www.mozilla.com/firefox'>Mozilla Firefox</a> or <a href='http://opera.com/'>Opera</a>.", 'iewarning') : get_option('iewarning_alert_message'); ?></p> <p class='ie-warning-close'><a href=\"javascript:iewarningclose()\"><?php _e("Close", 'iewarning'); ?></a></p></div>";
 				document.body.appendChild(d);
 			}
 			function wait() {
