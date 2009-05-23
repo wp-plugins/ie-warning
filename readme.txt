@@ -3,7 +3,7 @@ Contributors: bobrik
 Tags: ie, block, internet explorer, javascript
 Requires at least: 2.0.2
 Tested up to: 2.7
-Stable tag: 0.20
+Stable tag: 0.21
 
 Shows nice and simple warning to your visitors with Internet Explorer, supports customization and settings
 
